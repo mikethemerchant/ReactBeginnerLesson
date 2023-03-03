@@ -12,11 +12,10 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/babel">
             const rootElement = document.getElementById("root");
-            const namethis = 'blah werd';
-            const contains = 'container';
-            const otherThing = 'blah';
-            const props = {namethis,constains,otherThing}
-            const element = <div {...props}>namethis</div>;
+            const children = 'WhatItIs';
+            const className = 'container';
+            const props = {children,className}
+            const element = <div id="app-root" {...props} />;
             ReactDOM.render(element,rootElement);
         </script>
     </div>
