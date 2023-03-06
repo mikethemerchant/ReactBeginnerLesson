@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From scratch do it</title>
+    <title>Lesson 6 A</title>
 </head>
 <body>
     <div id="root">
@@ -11,12 +11,11 @@
         <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/babel">
-            const rootElement = document.getElementById("root");
-            const children = 'WhatItIs';
-            const className = 'container';
-            const props = {children,className}
-            const element = <div id="app-root" {...props} />;
-            ReactDOM.render(element,rootElement);
+            const element = <>
+                    <span>pee</span>
+                    <span> on the potty.</span>
+                </>           
+            ReactDOM.render(element,document.getElementById("root"));
         </script>
     </div>
 </body>
