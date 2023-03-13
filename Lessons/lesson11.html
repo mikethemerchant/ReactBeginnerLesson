@@ -1,0 +1,42 @@
+<html lang="en">
+<body>
+    <div id="root"></div>
+        <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .box {
+                border: 2px solid;
+            }
+            .box-small {
+                height: 1rem;
+                width: 5rem;
+                background-color: blue;
+            }
+            .box-medium {
+                height: 1rem;
+                width: 10rem;
+                background-color: pink;
+            }
+            .box-large {
+                height: 1rem;
+                width: 15rem;
+                background-color: orange;
+            }
+        </style>
+        <script type="text/babel">
+            function Box(props) {
+                return (<div {...props}>{props.children}</div>)
+            }
+            const rootElement = document.getElementById("root");
+            const element = (
+                <div>
+                    <Box children="what" className="box box-small" />
+                    <Box children="it" className="box box-medium" />
+                    <Box children="is" className="box box-large" />
+                </div>
+            );
+            ReactDOM.render(element,rootElement);
+        </script>
+</body>
+</html>
