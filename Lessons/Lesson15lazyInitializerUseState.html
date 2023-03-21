@@ -7,13 +7,16 @@
         <script type="text/babel">
 
             function Greeting() {
-              const [name, setName] = React.useState(window.localStorage.getItem('name', name) || '')
+              const [name, setName] = React.useState(() => {
+                console.log('loaded')
+                return window.localStorage.getItem('name', name) || ''
+              })
+              
+              console.log('render me')
 
               React.useEffect(() => {
                 window.localStorage.setItem('name', name)
               })
-              
-              console.log('render me')
 
               const handleChange = event => setName(event.target.value)
 
