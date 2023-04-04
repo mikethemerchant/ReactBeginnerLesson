@@ -1,0 +1,44 @@
+<html lang="en">
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+        <script type="text/babel">
+            const allitems = [
+                {id:'a', value:'apple'},
+                {id:'p', value:'pear'},
+                {id:'g', value:'grape'},
+                {id:'w', value:'watermellon'}
+            ]
+
+            function App() {
+            
+                const [items, setItems] = React.useState(allitems)
+                                    
+                function addItem() {
+                    setItems([...items, allItems.find(i => !items.includes(i))])
+                }
+
+                function removeItem(item) {
+                    setItems(items.filter(i => i !== item))
+                }
+
+                return (
+                    <>
+                        <ul>
+                            {items.map(item => 
+                                <li key={item.id} >
+                                    <button onClick={() => removeItem(item)} >remove</button>
+                                    <div>{item.value}</div>
+                                </li>
+                            )}
+                        </ul>
+                    </>
+                )
+            }
+
+            ReactDOM.render(<App />, document.getElementById('root'))
+        </script>
+    </body>
+</html>
